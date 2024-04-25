@@ -1,20 +1,12 @@
-import java.util.Scanner;
 import java.time.LocalDate;
-import java.time.Period;
+import java.util.Scanner;
+
 public class practice {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter the birthdate (yyyy-mm-dd): ");
-        String birthdateStr = input.nextLine();
-
-        LocalDate birthdate = LocalDate.parse(birthdateStr);
-        LocalDate today = LocalDate.now();
-        Period period = Period.between(birthdate, today);
-
-        int age = period.getYears();
-        System.out.println("The age is: " + age);
-
-        input.close();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the date : ");
+        String date = sc.nextLine();
+        int day = LocalDate.now().getDayOfMonth();
+        System.out.print("Today is " + day);
     }
-
 }
