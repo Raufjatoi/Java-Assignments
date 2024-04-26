@@ -1,31 +1,36 @@
-/*
-Duration between Events:Imagine a scenario where you have events scheduled with start and end dates/times.
-Write a program that takes two LocalDateTime objects representing
-event start and end times and calculates the duration of the event in hours and minutes.
- */
-
-
 import java.time.Duration;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.util.Scanner;
 
 public class assi5 {
-    public static void main(String[] args) {
-        // Example events
-        LocalDateTime eventStart = LocalDateTime.of(2024, 4, 25, 13, 30);
-        LocalDateTime eventEnd = LocalDateTime.of(2024, 4, 25, 15, 45);
 
-        Duration duration = calculateDuration(eventStart, eventEnd);
+        public static void main(String[] args) {
+            System.out.println("\t\t\t Findin the duration program :⏲️ ");
+            System.out.println("Enter start time : ");
+            LocalDate start = gettime();
+            System.out.println("Enter end time : ");
+            LocalDate end = gettime();
 
-        System.out.println("Event Duration: " + formatDuration(duration));
+            Duration duration = Duration.between(start, end);
+            System.out.println("Duration : "+duration);
+        }
+        private static String formatDuration(Duration duration) {
+            return duration.toHours() + ":" + duration.toMinutes();
+        }
+        private static LocalDate gettime() {
+            Scanner in = new Scanner(System.in);
+            System.out.print("enter year : ");
+            int year = in.nextInt();
+            System.out.print("enter month : ");
+            int month = in.nextInt();
+            System.out.print("enter day : ");
+            int day = in.nextInt();
+            System.out.print("enter hour : ");
+            int hour = in.nextInt();
+            System.out.print("enter minute : ");
+            int minute = in.nextInt();
+            System.out.print("enter second : ");
+            int second = in.nextInt();
+            return LocalDate.of(year, month, day);
+        }
     }
-
-    public static Duration calculateDuration(LocalDateTime start, LocalDateTime end) {
-        return Duration.between(start, end);
-    }
-
-    public static String formatDuration(Duration duration) {
-        long hours = duration.toHours();
-        long minutes = duration.toMinutesPart();
-        return String.format("%d hours, %d minutes", hours, minutes);
-    }
-}

@@ -1,31 +1,27 @@
-/*
-Date Parsing Write a program that reads a date string in a specific
-format (e.g., "yyyy-MM-dd") from the user and parses it into
-a LocalDate object using the LocalDate.parse() method. Handle
- potential parsing exceptions gracefully.
- */
 import java.time.LocalDate;
+import java.util.Scanner;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Scanner;
-
 
 public class assi4 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        Scanner in = new Scanner(System.in);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        System.out.println("Enter a date in the format YYYY-MM-DD: ");
-        String dateString = scanner.nextLine();
+        System.out.print("Enter a date in the format dd/MM/yyyy: ");
+        String date = in.nextLine();
 
-        try {
-            LocalDate parsedDate = LocalDate.parse(dateString, formatter);
-            System.out.println("Parsed date: " + parsedDate);
-        } catch (DateTimeParseException e) {
-            System.out.println("Invalid date format. Please enter a date in the format YYYY-MM-DD.");
+        try{
+            LocalDate parsedDate = LocalDate.parse(date, dtf);
+            System.out.println("CORRECT !! ur date: " + parsedDate);
+
         }
+        catch(DateTimeParseException e){
+            System.out.println(" WRONG 🙂 Your date: " + date);
+            System.out.println("U should input in dd/MM/yyyy <<<<<< THIS FORMAT 🥲");
+
+        }
+
+
     }
-
-
-
 }

@@ -2,29 +2,20 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.Scanner;
 
-public class assi3 {
-    public static void main(String[] args) {
-        // Create a Scanner object to read input from the user
-        Scanner scanner = new Scanner(System.in);
+public class assi3{
+    public static void main(String[] args){
+        System.out.println("\t\t\t Age calculator 📅");
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter your age in yyyy-mm-dd: ");
+        LocalDate age = LocalDate.parse(in.nextLine());
+        LocalDate present = LocalDate.now();
 
-        // Ask the user to input their birthdate
-        System.out.print("Enter your birthdate (yyyy-mm-dd): ");
-        String birthdateStr = scanner.nextLine();
+        Period diff = Period.between(age, present);
 
-        // Parse the user input into a LocalDate object
-        LocalDate birthdate = LocalDate.parse(birthdateStr);
+        int years = diff.getYears();
 
-        // Get the current date
-        LocalDate currentDate = LocalDate.now();
+        System.out.println("\t\t\t Age is " + years);
 
-        // Calculate the difference between the current date and the birthdate
-        Period period = Period.between(birthdate, currentDate);
-
-        // Output the age
-        int age = period.getYears();
-        System.out.println("Your age is: " + age);
-
-        // Close the scanner
-        scanner.close();
     }
+
 }

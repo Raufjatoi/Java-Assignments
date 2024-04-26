@@ -1,54 +1,21 @@
-import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Scanner;
 
-public class assi1 {
-    /*Date Difference: Write a program that takes two dates as
-     input from the user (e.g., using Scanner) and calculates the difference between them in days.
-     */
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+public class assi1{
+    public static void main(String[] args){
+        System.out.println("\t\t\t Findin the diff bw two dates ➖");
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter the 1st date yyyy-mm-dd : ");
+        LocalDate d1 = LocalDate.parse(in.nextLine());
+        System.out.print("Enter the 2nd date: ");
+        LocalDate d2 = LocalDate.parse(in.nextLine());
 
-        // Get the first date
-        System.out.println("Enter the first date:");
-        LocalDate date1 = getDateFromUser(scanner);
+        Period Diff = Period.between(d1, d2);
 
-        // Get the second date
-        System.out.println("Enter the second date:");
-        LocalDate date2 = getDateFromUser(scanner);
+        System.out.println("\t\t\t\t The difference between the two dates is >> " + Diff);
+        System.out.print("Ignore the p its just the abjbrivation of p ");
 
-        // Calculate the difference
-        Period difference = Period.between(date1, date2);
-
-        // Print the result
-        System.out.println("Difference in days: " + difference.getDays());
-    }
-
-    private static LocalDate getDateFromUser(Scanner scanner) {
-        int year, month, day;
-
-        do {
-            System.out.print("Enter year: ");
-            year = scanner.nextInt();
-            System.out.print("Enter month (1-12): ");
-            month = scanner.nextInt();
-            System.out.print("Enter day: ");
-            day = scanner.nextInt();
-            scanner.nextLine(); // Consume newline character
-
-        } while (!isValidDate(year, month, day));
-
-        return LocalDate.of(year, month, day);
-    }
-
-    private static boolean isValidDate(int year, int month, int day) {
-        try {
-            LocalDate.of(year, month, day);
-            return true;
-        } catch (Exception e) {
-            System.out.println("Invalid date. Please try again.");
-            return false;
-        }
     }
 
 }

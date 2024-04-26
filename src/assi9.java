@@ -1,5 +1,6 @@
-//Holiday Calendar: Create a program that reads a year from the user and displays a list of major holidays (e.g., New Year's Day, Christmas) for that year using
-//the LocalDate API and predefined holiday data structures.
+//Holiday Calendar: Create a program that reads a year from the user and displays a list of major holidays
+//(e.g., New Year's Day, Christmas) for that year using
+//the LocalDate API and predefined holiday data structures.
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
