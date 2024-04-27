@@ -1,45 +1,55 @@
-//Periodic Reminder: Simulate a basic reminder system. Read a date and time for a
-// reminder along with a message from the user. Schedule a task
-//(using libraries like java.util.Timer or a
-//third-party library) to display the reminder message when the specified date and time arrives.
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.Date;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Scanner;
 
 public class assi7 {
-    public static void main(String[] args) {        if (args.length < 3) {
-        System.out.println("Usage: java Reminder <date> <time> <message>");
-        return;
+    public static void main(String[] args){
+        System.out.println("\t\t\t Periodic Reminder System ⌛");
+
+        System.out.println("chose options \n 1: A to add task \n 2: to view task ");
+        System.out.print("Choice:: ");
+        Scanner input = new Scanner(System.in);
+        int choice = input.nextInt();
+        switch(choice){
+            case 1:
+                add();
+            case 2:
+                view("no any titles added yet "," read title again",0,LocalDate.now());
+
+        }
+
+
     }
-    String reminderDateStr = args[0];
-    String reminderTimeStr = args[1];
-    String reminderMessage = args[2];
+    public static void add(){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please enter the task title: ");
+        String title = input.nextLine();
+        System.out.print("Please enter the task description: ");
+        String description = input.nextLine();
+        System.out.print("Please enter the task priority: ");
+        int priority = input.nextInt();
+        System.out.print("Please enter the date : ");
+        String date = input.nextLine();
+        LocalDate localDate = LocalDate.parse(date);
+        view(title,description,priority,localDate);
 
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    Date reminderDate;
+        System.out.println("Task added successfully");
 
-        try {
-        // Combine date and time strings into one datetime object
-        reminderDate = dateFormat.parse(reminderDateStr + " " + reminderTimeStr);
+        System.out.println("UR TASK IS :: ");
 
-        // Create a Timer object
-        Timer timer = new Timer();
+        System.out.println("\t\t\t Task Title: " + title);
+        System.out.println("\t\t\t Task Description: " + description);
+        System.out.println("\t\t\t Task Priority: " + priority);
+        System.out.println("\t\t\t Task Date: " + localDate);
 
-        // Schedule a TimerTask to display the reminder message when the specified time arrives
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                System.out.println("Reminder: " + reminderMessage);
 
-                // Stop the timer once the reminder is displayed
-                timer.cancel();
-            }
-        }, reminderDate);
 
-        System.out.println("Reminder scheduled for: " + reminderDateStr + " " + reminderTimeStr);
-    } catch (Exception e) {
-        System.out.println("Error: " + e.getMessage());
+
     }
-}
+    public static void view(String title, String description, int priority, LocalDate localDate ){
+        System.out.println("\t\t\t Task Title: " + title);
+        System.out.println("\t\t\t Task Description: " + description);
+        System.out.println("\t\t\t Task Priority: " + priority);
+        System.out.println("\t\t\t Task Date: " + localDate);
+
+    }
 }
