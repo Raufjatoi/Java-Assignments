@@ -1,39 +1,22 @@
-//Date and Time Validation: Write a program that validates user input for dates and times.
-//Ensure the input is in a specific format and represents a valid date/time within a
-//certain range (e.g., check for future dates only).
-
-
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
+import java.util.Scanner;
 
-public class assi8 {
-    public static void main(String[] args) {
-        if (args.length < 1) {
-            System.out.println("Usage: java DateTimeValidator <datetime>");
-            return;
-        }
+public class assi8{
+    public static void main(String[] args){
+        System.out.println("\t\t\t DATE AND TIME VALIDATOR : ");
+        Scanner in  = new Scanner(System.in);
 
-        String inputDateTimeStr = args[0];
+        System.out.print("Enter date in the format YYYY-MM-DD-hh-mm-ss and date should now ");
+        String date = in.nextLine();
 
-        // Define the expected date/time format
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime dateTime = LocalDateTime.parse(date);
 
-        try {
-            // Parse the input string to LocalDateTime using the defined format
-            LocalDateTime inputDateTime = LocalDateTime.parse(inputDateTimeStr, formatter);
+        if (dateTime.isBefore(LocalDateTime.now())){
+            System.out.println("Correct ");
 
-            // Get the current date/time
-            LocalDateTime currentDateTime = LocalDateTime.now();
-
-            // Validate if the input date/time is in the future
-            if (inputDateTime.isAfter(currentDateTime)) {
-                System.out.println("Input date/time is valid and represents a future date/time.");
-            } else {
-                System.out.println("Input date/time must be in the future.");
-            }
-        } catch (DateTimeParseException e) {
-            System.out.println("Error: Invalid date/time format. Please use the format 'yyyy-MM-dd HH:mm:ss'.");
+        } else {
+            System.out.println("Invalid date");
         }
     }
 }
