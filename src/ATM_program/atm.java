@@ -6,15 +6,17 @@ public class atm {
     public static void main(String[] args) {
         int rauf = 1234;
         int balance1 = 10000;
+        int ahsan = 5678;  //adding more accounts if it work 
+        int balance2 = 15000;
 
-        System.out.println("\t\t\t Banks ATM program 🏧 ");
+        System.out.println("\t\t\t ATM program 💰 ");
         Scanner in = new Scanner(System.in);
 
         int attempts = 0;
 
         int pin;
         do {
-            System.out.print("Pin: ");
+            System.out.print("Pin 🔢: ");
             pin = in.nextInt();
 
             if (pin != rauf) {
