@@ -33,9 +33,9 @@ public class pokemon {
         return name;
     }
 
-    // ... (Getters for type, hp, attack, defense)
-
 public static void main(String[] args) {
+    System.out.println("\t\t\t Pokemon game 🐈");
+    
     // Create some Pokemon
     pokemon pikachu = new pokemon("Pikachu", "Electric", 35, 55, 40);
     pokemon charmander = new pokemon("Charmander", "Fire", 39, 52, 43);
