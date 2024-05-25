@@ -1,3 +1,4 @@
+package lab2;
 import java.util.Scanner;
 
 // Class representing an item in the shopping cart
@@ -158,3 +159,4 @@ public class ex7{
         }
     }
 }
+
