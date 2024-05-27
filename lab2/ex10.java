@@ -21,34 +21,46 @@ class Song {
 class MusicPlayer{
     static Song[] songs = new Song[100];
     static int count = 0;
+    static int i = 0;
+
 
     //o Add a song to the playlist (check for duplicates).
     public static void add (Song song){
-        //if (song in songs ){
-           // System.out.println("song already exists ");
-        //}
-        // else 
-        songs[count] = song;
-        
-    }
+        songs[count] = song ;
+        count ++;
+            }
     //o Remove a song from the playlist.
+    public void removeItem(Song song) {
+        int r = 0;
+        for (int i = 0; i < r; i++) {
+            if (songs[i].title.equals(song.title)) {
+                
+                for (int j = i; j < r - 1; j++) {
+                    songs[j] = songs[j + 1];
+                }
+                songs[r - 1] = null;
+                r--;
+            }
+        }
+    }
 
     // shuffle around 
 
 
     // play song by title 
 
-    public static void play (Song song){
-        System.out.println("playin " + song.title + " by " + song.artist + " and its " + song.genre + "type ");
+    public static void play (){
+        while (true){
+            System.out.println(songs[i].title + " by " + songs[i].artist + " genra is " + songs[i].genre);
+            i ++;
+
+            if (i == 3){
+                break;
+            }
+
+        }
+        }
     }
-
-    
-    
-    
-    
-
-}
-
 public class ex10 {
     public static void main(String[] args) {
 
@@ -60,9 +72,8 @@ public class ex10 {
         MusicPlayer.add(s2);
         MusicPlayer.add(s3);
 
-        MusicPlayer.play(s1);
-        MusicPlayer.play(s2);
-        MusicPlayer.play(s3);
+        MusicPlayer.play();
+        
 
 
 

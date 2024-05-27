@@ -7,14 +7,11 @@ class Product {
     int price;
     int quantity;
 
-    // Constructor
     public Product(String name, int price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
-
-    // Getter methods
     public String getName() {
         return name;
     }
@@ -27,77 +24,51 @@ class Product {
         return quantity;
     }
 
-    // Setter methods
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    // Method to reduce quantity by 1
     public void sell() {
         if (quantity > 0) {
             quantity--;
         } else {
-            System.out.println("Out of stock");
+            System.out.println("Out of quantity");
         }
     }
-
-    // Method to display product details
     public void display() {
         System.out.println("Product Name: " + name);
-        System.out.println("Price: $" + price);
+        System.out.println("Price: " + price);
         System.out.println("Quantity in Stock: " + quantity);
     }
 }
 
 class GroceryStore {
-    private ArrayList<Product> inventory;
-
-    // Constructor
+    public ArrayList<Product> inventory;
     public GroceryStore() {
         inventory = new ArrayList<>();
     }
-
-    // Method to add a new product to the inventory
     public void addProduct(Product product) {
         inventory.add(product);
     }
-
-    // Method to sell a product (reduce quantity by 1)
     public void sellProduct(String name) {
         for (Product product : inventory) {
-            if (product.getName().equalsIgnoreCase(name)) {
+            if (product.getName().equals(name)) {
                 product.sell();
                 return;
             }
         }
         System.out.println("Product not found");
     }
-
-    // Method to search for a product by name and display its details
     public void searchProduct(String name) {
         for (Product product : inventory) {
-            if (product.getName().equalsIgnoreCase(name)) {
+            if (product.getName().equals(name)) {
                 product.display();
                 return;
             }
         }
         System.out.println("Product not found");
     }
-
-    // Method to print a report showing all products and their current stock levels
     public void printInventoryReport() {
         System.out.println("Inventory Report:");
         for (Product product : inventory) {
             product.display();
-            System.out.println("--------------");
+            System.out.println("huh");
         }
     }
 

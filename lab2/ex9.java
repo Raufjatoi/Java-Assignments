@@ -1,7 +1,5 @@
 package lab2;
 
-import lab.diagram;
-
 //4. Restaurant Menu:
 // Create a class named Dish with member variables for name, description (optional), and
 //price.
@@ -21,6 +19,7 @@ class Dish{
     public Dish( String name , int price ){
         this.name = name;
         this.price = price;
+        
     }
 
 }
@@ -30,32 +29,52 @@ class RestaurantMenu{
     static Dish [] dishes = new Dish[100];
     static int counts = 0;
 
-    public static void add(Dish dish){
-        dishes[counts] = dish;
-        counts ++;
+    public static void add(Dish d1 , Dish d2 , Dish d3 , Dish d4 ){
+        dishes[0] = d1;
+        dishes[1] = d2;
+        dishes[2] = d3;
     }
 
     public static void display(){
-        System.out.println( "name of dish is " + dishes[0].name + " and price is " + dishes[0].price );
+        
+        System.out.println(dishes[0].name + " price : " + dishes[0].price);
+        System.out.println(dishes[1].name + " price : " + dishes[1].price);
+        System.out.println(dishes[2].name + " price : " + dishes[2].price);
+            }
 
-    }
+    public static void search(Dish dish){
+        if (dish.name == dishes[0].name || dish.name == dishes[1].name || dish.name == dishes[2].name ){
+            System.out.println(dish.name + " is found ");
 
-    public static Dish search(Dish dish){
-        return dish;
-    }
+        }
+            
+            else{
+                System.out.println("didnt found anythin based on tha ");
+            }
+        }
+    
 
     public static void cat(){
-        System.out.println("testing");
+        System.out.println("category is underprocess");
     }
+    
 } 
 
 
 public class ex9 {
     public static void main(String[] args) {
         Dish d1 = new Dish("pizza",200);
+        Dish d2 = new Dish("burger",300);
+        Dish d3 = new Dish("finger chips",150);
+        Dish d4 = new Dish("pizza" , 220);
 
-        RestaurantMenu.add(d1);
+        RestaurantMenu.add(d1, d2 , d3 , d4 );
         RestaurantMenu.display();
+
+        RestaurantMenu.search(d1);
+        RestaurantMenu.search(d2);
+
+        RestaurantMenu.cat();
         
     }
     
