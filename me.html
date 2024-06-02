@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Rauf - Personal Webpage</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2b2b2b;
+            color: #d1d1d1;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #1c1c1c;
+            color: #d1d1d1;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.2rem;
+        }
+        .profile-pic {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 95px;
+            height: 120px;
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease-in-out;
+        }
+        .profile-pic:hover {
+            filter: grayscale(0%);
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: #d1d1d1;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+        .bio, .portfolio, .blog, .contact, .certificates {
+            background-color: #1c1c1c;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .bio h2, .portfolio h2, .blog h2, .contact h2, .certificates h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .certificate {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .certificate img {
+            width: 200px;
+            height: 120px;
+            margin-right: 1rem;
+            border-radius: 8px;
+        }
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .contact-icons a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            border-radius: 50%;
+            color: #d1d1d1;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .contact-icons a:hover {
+            background-color: #0f0e0e;
+        }
+        .contact-icons img {
+            width: 20px;
+            height: 20px;
+        }
+        footer {
+            background-color: #1c1c1c;
+            color: #d1d1d1;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        footer p {
+            margin: 0;
+        }
+        footer p span {
+            font-size: 1.2rem;
+        }
+        a {
+            color: #007bff;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            nav a {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="profile-pic">
+            <a href="https://github.com/Raufjatoi/doin-somethin-/blob/main/AWS%20certified%20machine%20learning%20spediality.png">
+                <img src="r2.JPG" alt="Abdul Rauf">
+            </a>
+        </div>
+        <h1>Abdul Rauf</h1>
+        <p>AI and ML Engineer | Web dev | Data Enthusiast 🥸</p>
+    </header>
+    <nav>
+        <a href="#bio">About Me</a>
+        <a href="#portfolio">Projects</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="#certificates">Certificates</a>
+    </nav>
+    <div class="container">
+        <section id="bio" class="bio">
+            <h2>About Me</h2>
+            <p>Hi 👋, I'm Abdul Rauf. An AI and ML Engineer studying at Quest University Nawabshah. I love to work on new projects and explore new things. I'm passionate about AI and its potential to change the world. In my free time, I also engage in web development. Recently, I completed a course on web development with Python and JavaScript from CS50Web, where I learned a lot of new things.</p>
+        </section>
+        <section id="portfolio" class="portfolio">
+            <h2>Projects</h2>
+            <p>Here are some of my projects I have worked on 😊</p>
+            <ul>
+                <li><a href="https://github.com/Raufjatoi/Multi-domain-price-estimator">Multi Domain Price Estimator</a></li>
+                <li><a href="https://github.com/Raufjatoi/courseR">courseR : My final project for CS50Web 🦆</a></li>
+                <li><a href="https://github.com/Raufjatoi/flask-music-app">R Music : flask based music app 🎧</a></li>
+            </ul>
+        </section>
+        <section id="blog" class="blog">
+            <h2>Blog</h2>
+            <p>Check out my latest blog posts:</p>
+            <ul>
+                <li><a href="#later">What are transformers? 😊</a></li>
+                <li><a href="https://medium.com/@raufpokemon00/network-project-4-of-cs50web-baa0ecaa8b18">Network: Project 4 of CS50Web 🦆</a></li>
+                <li><a href="https://medium.com/@raufpokemon00/6-key-steps-in-machine-learning-project-27baed560ac4">6 Key Steps in a Machine Learning Project</a></li>
+            </ul>
+        </section>
+        <section id="certificates" class="certificates">
+            <h2>Certificates</h2>
+            <div class="certificate">
+                <img src="aws.png" alt="AWS Certified Machine Learning Specialty">
+                <div>
+                    <h3>AWS Certified Machine Learning Specialty ✅</h3>
+                    <p>Gained knowledge about machine learning algorithms and cloud computing. This certification validates my expertise in designing, implementing, and maintaining machine learning solutions in the AWS Cloud.</p>
+                </div>
+            </div>
+            <div class="certificate">
+                <img src="CS50P.png" alt="CS50's Introduction to Programming with Python">
+                <div>
+                    <h3>Introduction to Programming with Python ✅</h3>
+                    <p>Learnt about the Python programming language from basics to more advanced topics including procedural, functional, and object-oriented programming. Completed assignments and a final project to solidify my understanding.</p>
+                </div>
+            </div>
+            <p>More certificates available on request.</p>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <div class="contact-icons">
+                <a href="mailto:raufpokemon00@gmail.com">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" alt="Email">
+                </a>
+                <a href="https://github.com/Raufjatoi" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub">
+                </a>
+                <a href="https://instagram.com/yourusername" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram">
+                    <a href="tel:+923192479656">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Phone">
+                    </a>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <p>&copy; 2024 Abdul Rauf. All rights reserved. <span>😊</span></p>
+        </footer>
+    </body>
+    </html>
+    

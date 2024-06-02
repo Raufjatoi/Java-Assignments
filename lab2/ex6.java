@@ -68,7 +68,6 @@ class GroceryStore {
         System.out.println("Inventory Report:");
         for (Product product : inventory) {
             product.display();
-            System.out.println("huh");
         }
     }
 
@@ -84,7 +83,7 @@ class GroceryStore {
         store.addProduct(eggs);
 
         store.searchProduct("Milk");
-        store.sellProduct("Milk");
+        store.sellProduct("eggs");
         store.searchProduct("Milk");
 
         store.printInventoryReport();
